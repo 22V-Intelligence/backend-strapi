@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_layout_media_full_contents",
+  "info": {
+    "displayName": "Media - Full Content"
+  },
+  "options": {},
+  "attributes": {
+    "ImageVideo": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "richtext"
+    },
+    "MainCTAText": {
+      "type": "string"
+    },
+    "MainCTAurl": {
+      "type": "string"
+    },
+    "SecondaryContent": {
+      "type": "string"
+    },
+    "SecondaryCTAtext": {
+      "type": "string"
+    },
+    "SecondaryCTAurl": {
+      "type": "string"
+    }
+  }
+}

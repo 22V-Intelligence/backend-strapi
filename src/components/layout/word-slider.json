@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_layout_word_sliders",
+  "info": {
+    "displayName": "Basic Slider",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "SlideData": {
+      "displayName": "Basic Slider",
+      "type": "component",
+      "repeatable": true,
+      "component": "metadata.basic-slider"
+    }
+  }
+}

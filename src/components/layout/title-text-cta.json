@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_layout_title_text_ctas",
+  "info": {
+    "displayName": "Title - Text / CTA"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "richtext"
+    },
+    "CTAtext": {
+      "type": "string"
+    },
+    "CTAurl": {
+      "type": "string"
+    }
+  }
+}

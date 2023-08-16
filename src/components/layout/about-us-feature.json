@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_layout_about_us_features",
+  "info": {
+    "displayName": "About Us Feature",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "CTAtext": {
+      "type": "string"
+    },
+    "CTAurl": {
+      "type": "string"
+    },
+    "BGimage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "CircleBGimage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_layout_report_lists",
+  "info": {
+    "displayName": "Report List"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "From Our Newsroom"
+    },
+    "MainCTAtext": {
+      "type": "string",
+      "default": "View Our Reports"
+    },
+    "MainCTAurl": {
+      "type": "string"
+    },
+    "reports": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::report.report"
+    }
+  }
+}
