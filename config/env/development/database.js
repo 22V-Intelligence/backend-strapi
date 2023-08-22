@@ -61,7 +61,7 @@ module.exports = ({ env }) => {
         database: env("DATABASE_NAME", "website_main"),
         user: env("DATABASE_USERNAME", "kenneth"),
         password: env("DATABASE_PASSWORD", "rootadmin"),
-        ssl: { rejectUnauthorized: false },
+        ssl: { rejectUnauthorized: env.bool("DATABASE_SSL_SELF", false) },
         schema: env("DATABASE_SCHEMA", "public"),
       },
       pool: {
