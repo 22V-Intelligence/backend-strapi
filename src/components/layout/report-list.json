@@ -1,7 +1,8 @@
 {
   "collectionName": "components_layout_report_lists",
   "info": {
-    "displayName": "Report List"
+    "displayName": "Report Feature",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -20,6 +21,13 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::report.report"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "list",
+        "grid"
+      ]
     }
   }
 }

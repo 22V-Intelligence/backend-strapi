@@ -29,7 +29,10 @@
         "layout.media-full-content",
         "layout.report-list",
         "layout.word-slider",
-        "layout.about-us-feature"
+        "layout.about-us-feature",
+        "layout.search-bar",
+        "layout.report-summary",
+        "layout.report-section"
       ]
     },
     "Slug": {

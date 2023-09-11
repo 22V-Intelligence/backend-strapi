@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_layout_report_sections",
+  "info": {
+    "displayName": "Report Section"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "Blurb": {
+      "type": "text"
+    },
+    "ImageRight": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "ContentLeft": {
+      "type": "richtext"
+    }
+  }
+}

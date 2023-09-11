@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_layout_report_summaries",
+  "info": {
+    "displayName": "Report Summary"
+  },
+  "options": {},
+  "attributes": {
+    "LeftTitle": {
+      "type": "string",
+      "default": "Bottom Line"
+    }
+  }
+}

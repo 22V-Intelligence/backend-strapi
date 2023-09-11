@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_layout_search_bars",
+  "info": {
+    "displayName": "SearchBar"
+  },
+  "options": {},
+  "attributes": {
+    "Display": {
+      "type": "boolean"
+    }
+  }
+}
