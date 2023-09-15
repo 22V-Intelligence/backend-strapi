@@ -33,6 +33,11 @@
         "layout.word-slider",
         "seo.metadata"
       ]
+    },
+    "Author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
     }
   }
 }
