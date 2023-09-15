@@ -1,4 +1,9 @@
 module.exports = ({ env }) => ({
+  "strapi-plugin-populate-deep": {
+    config: {
+      defaultDepth: 20,
+    },
+  },
   upload: {
     config: {
       provider: "aws-s3",
