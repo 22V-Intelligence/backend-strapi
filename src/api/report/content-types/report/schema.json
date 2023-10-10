@@ -31,7 +31,13 @@
         "layout.search-bar",
         "layout.title-text-cta",
         "layout.word-slider",
-        "seo.metadata"
+        "seo.metadata",
+        "layout.analysts-grid",
+        "layout.circle-feature",
+        "layout.content-block",
+        "layout.feature-list",
+        "layout.form",
+        "layout.three-fourth-content"
       ]
     },
     "Author": {
