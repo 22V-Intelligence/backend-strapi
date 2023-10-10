@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_layout_three_fourth_contents",
+  "info": {
+    "displayName": "ThreeFourthContent"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "richtext"
+    }
+  }
+}

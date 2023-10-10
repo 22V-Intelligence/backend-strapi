@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_layout_forms",
+  "info": {
+    "displayName": "Form"
+  },
+  "options": {},
+  "attributes": {
+    "FormType": {
+      "type": "enumeration",
+      "enum": [
+        "contact"
+      ]
+    },
+    "Title": {
+      "type": "string",
+      "default": "Contact Us"
+    },
+    "Blurb": {
+      "type": "text"
+    }
+  }
+}

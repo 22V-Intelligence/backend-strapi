@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_layout_content_blocks",
+  "info": {
+    "displayName": "Content Block"
+  },
+  "options": {},
+  "attributes": {
+    "Content": {
+      "type": "richtext"
+    }
+  }
+}

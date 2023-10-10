@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_layout_circle_features",
+  "info": {
+    "displayName": "CircleFeature"
+  },
+  "options": {},
+  "attributes": {
+    "BackgroundImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Content": {
+      "type": "text"
+    }
+  }
+}

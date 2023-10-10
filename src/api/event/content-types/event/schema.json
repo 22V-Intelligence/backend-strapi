@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "pages",
+  "collectionName": "events",
   "info": {
-    "singularName": "page",
-    "pluralName": "pages",
-    "displayName": "Page",
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event",
     "description": ""
   },
   "options": {
@@ -12,37 +12,38 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Metadata": {
-      "displayName": "Metadata",
-      "type": "component",
-      "repeatable": true,
-      "component": "seo.metadata"
+    "Slug": {
+      "type": "uid"
     },
     "Title": {
-      "type": "string"
+      "type": "string",
+      "unique": true
+    },
+    "Blurb": {
+      "type": "richtext"
+    },
+    "Content": {
+      "type": "richtext"
     },
     "Sections": {
       "type": "dynamiczone",
       "components": [
+        "layout.about-us-feature",
         "layout.hero",
-        "layout.title-text-cta",
         "layout.media-full-content",
         "layout.report-list",
-        "layout.word-slider",
-        "layout.about-us-feature",
-        "layout.search-bar",
-        "layout.report-summary",
         "layout.report-section",
+        "layout.report-summary",
+        "layout.search-bar",
+        "layout.title-text-cta",
+        "layout.word-slider",
+        "seo.metadata",
         "layout.analysts-grid",
         "layout.circle-feature",
         "layout.feature-list",
         "layout.form",
         "layout.three-fourth-content"
       ]
-    },
-    "Slug": {
-      "type": "uid",
-      "targetField": "Title"
     }
   }
 }

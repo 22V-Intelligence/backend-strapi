@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_layout_analysts_grids",
+  "info": {
+    "displayName": "AnalystsGrid",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "blurb": {
+      "type": "richtext"
+    },
+    "AnalystsCards": {
+      "displayName": "Analysts",
+      "type": "component",
+      "repeatable": true,
+      "component": "metadata.analysts"
+    }
+  }
+}

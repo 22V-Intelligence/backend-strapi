@@ -1,13 +1,29 @@
 {
   "collectionName": "components_layout_report_summaries",
   "info": {
-    "displayName": "Report Summary"
+    "displayName": "Report Summary",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "LeftTitle": {
       "type": "string",
       "default": "Bottom Line"
+    },
+    "LeftContent": {
+      "type": "richtext"
+    },
+    "RightTitle": {
+      "type": "string"
+    },
+    "RightContent": {
+      "type": "richtext"
+    },
+    "CallOutTitle": {
+      "type": "string"
+    },
+    "CallOutText": {
+      "type": "string"
     }
   }
 }
