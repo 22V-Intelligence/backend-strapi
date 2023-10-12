@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_layout_feature_lists",
+  "info": {
+    "displayName": "FeatureList"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "FeaturesData": {
+      "displayName": "Features",
+      "type": "component",
+      "repeatable": true,
+      "component": "metadata.features"
+    }
+  }
+}

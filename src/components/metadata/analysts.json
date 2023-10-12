@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_metadata_analysts",
+  "info": {
+    "displayName": "Analysts"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "JobTitle": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Content": {
+      "type": "richtext"
+    }
+  }
+}

@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "reports",
+  "collectionName": "events",
   "info": {
-    "singularName": "report",
-    "pluralName": "reports",
-    "displayName": "Report",
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event",
     "description": ""
   },
   "options": {
@@ -12,12 +12,18 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
-      "type": "string"
+    "Slug": {
+      "type": "uid"
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "Title"
+    "Title": {
+      "type": "string",
+      "unique": true
+    },
+    "Blurb": {
+      "type": "richtext"
+    },
+    "Content": {
+      "type": "richtext"
     },
     "Sections": {
       "type": "dynamiczone",
@@ -34,16 +40,11 @@
         "seo.metadata",
         "layout.analysts-grid",
         "layout.circle-feature",
-        "layout.content-block",
         "layout.feature-list",
         "layout.form",
-        "layout.three-fourth-content"
+        "layout.three-fourth-content",
+        "layout.content-block"
       ]
-    },
-    "Author": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "admin::user"
     }
   }
 }

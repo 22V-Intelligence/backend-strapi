@@ -1,7 +1,8 @@
 {
   "collectionName": "components_layout_report_sections",
   "info": {
-    "displayName": "Report Section"
+    "displayName": "Report Section",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -15,6 +16,28 @@
       "type": "text"
     },
     "ImageRight": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ContentLeft": {
+      "type": "richtext"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "singleImage",
+        "doubleImage"
+      ],
+      "default": "singleImage"
+    },
+    "imageLeft": {
       "allowedTypes": [
         "images",
         "files",
@@ -23,9 +46,6 @@
       ],
       "type": "media",
       "multiple": false
-    },
-    "ContentLeft": {
-      "type": "richtext"
     }
   }
 }

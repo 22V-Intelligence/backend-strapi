@@ -32,7 +32,13 @@
         "layout.about-us-feature",
         "layout.search-bar",
         "layout.report-summary",
-        "layout.report-section"
+        "layout.report-section",
+        "layout.analysts-grid",
+        "layout.circle-feature",
+        "layout.feature-list",
+        "layout.form",
+        "layout.three-fourth-content",
+        "layout.content-block"
       ]
     },
     "Slug": {
