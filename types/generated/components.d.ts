@@ -15,6 +15,63 @@ export interface LayoutAboutUsFeature extends Schema.Component {
   };
 }
 
+export interface LayoutAnalystsGrid extends Schema.Component {
+  collectionName: 'components_layout_analysts_grids';
+  info: {
+    displayName: 'AnalystsGrid';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    blurb: Attribute.RichText;
+    AnalystsCards: Attribute.Component<'metadata.analysts', true>;
+  };
+}
+
+export interface LayoutCircleFeature extends Schema.Component {
+  collectionName: 'components_layout_circle_features';
+  info: {
+    displayName: 'CircleFeature';
+  };
+  attributes: {
+    BackgroundImage: Attribute.Media;
+    Content: Attribute.Text;
+  };
+}
+
+export interface LayoutContentBlock extends Schema.Component {
+  collectionName: 'components_layout_content_blocks';
+  info: {
+    displayName: 'Content Block';
+  };
+  attributes: {
+    Content: Attribute.RichText;
+  };
+}
+
+export interface LayoutFeatureList extends Schema.Component {
+  collectionName: 'components_layout_feature_lists';
+  info: {
+    displayName: 'FeatureList';
+  };
+  attributes: {
+    Title: Attribute.String;
+    FeaturesData: Attribute.Component<'metadata.features', true>;
+  };
+}
+
+export interface LayoutForm extends Schema.Component {
+  collectionName: 'components_layout_forms';
+  info: {
+    displayName: 'Form';
+  };
+  attributes: {
+    FormType: Attribute.Enumeration<['contact']>;
+    Title: Attribute.String & Attribute.DefaultTo<'Contact Us'>;
+    Blurb: Attribute.Text;
+  };
+}
+
 export interface LayoutHero extends Schema.Component {
   collectionName: 'components_layout_heroes';
   info: {
@@ -71,6 +128,7 @@ export interface LayoutReportSection extends Schema.Component {
   collectionName: 'components_layout_report_sections';
   info: {
     displayName: 'Report Section';
+    description: '';
   };
   attributes: {
     Title: Attribute.String;
@@ -78,6 +136,9 @@ export interface LayoutReportSection extends Schema.Component {
     Blurb: Attribute.Text;
     ImageRight: Attribute.Media;
     ContentLeft: Attribute.RichText;
+    Type: Attribute.Enumeration<['singleImage', 'doubleImage']> &
+      Attribute.DefaultTo<'singleImage'>;
+    imageLeft: Attribute.Media;
   };
 }
 
@@ -85,9 +146,15 @@ export interface LayoutReportSummary extends Schema.Component {
   collectionName: 'components_layout_report_summaries';
   info: {
     displayName: 'Report Summary';
+    description: '';
   };
   attributes: {
     LeftTitle: Attribute.String & Attribute.DefaultTo<'Bottom Line'>;
+    LeftContent: Attribute.RichText;
+    RightTitle: Attribute.String;
+    RightContent: Attribute.RichText;
+    CallOutTitle: Attribute.String;
+    CallOutText: Attribute.String;
   };
 }
 
@@ -98,6 +165,17 @@ export interface LayoutSearchBar extends Schema.Component {
   };
   attributes: {
     Display: Attribute.Boolean;
+  };
+}
+
+export interface LayoutThreeFourthContent extends Schema.Component {
+  collectionName: 'components_layout_three_fourth_contents';
+  info: {
+    displayName: 'ThreeFourthContent';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Content: Attribute.RichText;
   };
 }
 
@@ -125,6 +203,19 @@ export interface LayoutWordSlider extends Schema.Component {
   };
 }
 
+export interface MetadataAnalysts extends Schema.Component {
+  collectionName: 'components_metadata_analysts';
+  info: {
+    displayName: 'Analysts';
+  };
+  attributes: {
+    Name: Attribute.String;
+    JobTitle: Attribute.String;
+    Image: Attribute.Media;
+    Content: Attribute.RichText;
+  };
+}
+
 export interface MetadataBasicSlider extends Schema.Component {
   collectionName: 'components_metadata_basic_sliders';
   info: {
@@ -133,6 +224,17 @@ export interface MetadataBasicSlider extends Schema.Component {
   attributes: {
     Title: Attribute.String;
     Image: Attribute.Media;
+  };
+}
+
+export interface MetadataFeatures extends Schema.Component {
+  collectionName: 'components_metadata_features';
+  info: {
+    displayName: 'Features';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Content: Attribute.Text;
   };
 }
 
@@ -152,15 +254,23 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'layout.about-us-feature': LayoutAboutUsFeature;
+      'layout.analysts-grid': LayoutAnalystsGrid;
+      'layout.circle-feature': LayoutCircleFeature;
+      'layout.content-block': LayoutContentBlock;
+      'layout.feature-list': LayoutFeatureList;
+      'layout.form': LayoutForm;
       'layout.hero': LayoutHero;
       'layout.media-full-content': LayoutMediaFullContent;
       'layout.report-list': LayoutReportList;
       'layout.report-section': LayoutReportSection;
       'layout.report-summary': LayoutReportSummary;
       'layout.search-bar': LayoutSearchBar;
+      'layout.three-fourth-content': LayoutThreeFourthContent;
       'layout.title-text-cta': LayoutTitleTextCta;
       'layout.word-slider': LayoutWordSlider;
+      'metadata.analysts': MetadataAnalysts;
       'metadata.basic-slider': MetadataBasicSlider;
+      'metadata.features': MetadataFeatures;
       'seo.metadata': SeoMetadata;
     }
   }
