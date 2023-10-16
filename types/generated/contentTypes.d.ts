@@ -785,6 +785,7 @@ export interface ApiReportReport extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     Title: Attribute.String;
@@ -817,14 +818,12 @@ export interface ApiReportReport extends Schema.CollectionType {
       'api::report.report',
       'oneToOne',
       'admin::user'
-    > &
-      Attribute.Private;
+    >;
     updatedBy: Attribute.Relation<
       'api::report.report',
       'oneToOne',
       'admin::user'
-    > &
-      Attribute.Private;
+    >;
   };
 }
 

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_layout_event_details_blocks",
+  "info": {
+    "displayName": "Event Details Block"
+  },
+  "options": {},
+  "attributes": {
+    "Details": {
+      "type": "component",
+      "repeatable": false,
+      "component": "metadata.event-details"
+    },
+    "contentTitle": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_metadata_event_details",
+  "info": {
+    "displayName": "Event Details"
+  },
+  "options": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "time": {
+      "type": "time"
+    },
+    "location": {
+      "type": "string"
+    },
+    "details": {
+      "type": "richtext"
+    }
+  }
+}

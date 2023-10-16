@@ -49,6 +49,34 @@ export interface LayoutContentBlock extends Schema.Component {
   };
 }
 
+export interface LayoutEventDetailsBlock extends Schema.Component {
+  collectionName: 'components_layout_event_details_blocks';
+  info: {
+    displayName: 'Event Details Block';
+  };
+  attributes: {
+    Details: Attribute.Component<'metadata.event-details'>;
+    contentTitle: Attribute.String;
+    content: Attribute.RichText;
+  };
+}
+
+export interface LayoutEventList extends Schema.Component {
+  collectionName: 'components_layout_event_lists';
+  info: {
+    displayName: 'Event List';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Content: Attribute.Text;
+    events: Attribute.Relation<
+      'layout.event-list',
+      'oneToMany',
+      'api::event.event'
+    >;
+  };
+}
+
 export interface LayoutFeatureList extends Schema.Component {
   collectionName: 'components_layout_feature_lists';
   info: {
@@ -227,6 +255,19 @@ export interface MetadataBasicSlider extends Schema.Component {
   };
 }
 
+export interface MetadataEventDetails extends Schema.Component {
+  collectionName: 'components_metadata_event_details';
+  info: {
+    displayName: 'Event Details';
+  };
+  attributes: {
+    date: Attribute.Date;
+    time: Attribute.Time;
+    location: Attribute.String;
+    details: Attribute.RichText;
+  };
+}
+
 export interface MetadataFeatures extends Schema.Component {
   collectionName: 'components_metadata_features';
   info: {
@@ -257,6 +298,8 @@ declare module '@strapi/types' {
       'layout.analysts-grid': LayoutAnalystsGrid;
       'layout.circle-feature': LayoutCircleFeature;
       'layout.content-block': LayoutContentBlock;
+      'layout.event-details-block': LayoutEventDetailsBlock;
+      'layout.event-list': LayoutEventList;
       'layout.feature-list': LayoutFeatureList;
       'layout.form': LayoutForm;
       'layout.hero': LayoutHero;
@@ -270,6 +313,7 @@ declare module '@strapi/types' {
       'layout.word-slider': LayoutWordSlider;
       'metadata.analysts': MetadataAnalysts;
       'metadata.basic-slider': MetadataBasicSlider;
+      'metadata.event-details': MetadataEventDetails;
       'metadata.features': MetadataFeatures;
       'seo.metadata': SeoMetadata;
     }
