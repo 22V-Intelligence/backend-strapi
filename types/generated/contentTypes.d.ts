@@ -787,7 +787,6 @@ export interface ApiReportReport extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: true;
-    populateCreatorFields: true;
   };
   attributes: {
     Title: Attribute.String;
@@ -812,7 +811,11 @@ export interface ApiReportReport extends Schema.CollectionType {
         'layout.three-fourth-content'
       ]
     >;
-    Author: Attribute.Relation<'api::report.report', 'oneToOne', 'admin::user'>;
+    author: Attribute.Relation<
+      'api::report.report',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -820,12 +823,14 @@ export interface ApiReportReport extends Schema.CollectionType {
       'api::report.report',
       'oneToOne',
       'admin::user'
-    >;
+    > &
+      Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::report.report',
       'oneToOne',
       'admin::user'
-    >;
+    > &
+      Attribute.Private;
   };
 }
 
