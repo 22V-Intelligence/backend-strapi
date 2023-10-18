@@ -811,6 +811,11 @@ export interface ApiReportReport extends Schema.CollectionType {
         'layout.three-fourth-content'
       ]
     >;
+    author: Attribute.Relation<
+      'api::report.report',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
