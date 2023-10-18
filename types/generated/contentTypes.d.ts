@@ -761,7 +761,9 @@ export interface ApiPagePage extends Schema.CollectionType {
         'layout.feature-list',
         'layout.form',
         'layout.three-fourth-content',
-        'layout.content-block'
+        'layout.content-block',
+        'layout.event-details-block',
+        'layout.event-list'
       ]
     >;
     Slug: Attribute.UID<'api::page.page', 'Title'>;
