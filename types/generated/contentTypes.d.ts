@@ -631,7 +631,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -670,6 +669,36 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'plugin::users-permissions.user',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCategoryCategory extends Schema.CollectionType {
+  collectionName: 'categories';
+  info: {
+    singularName: 'category';
+    pluralName: 'categories';
+    displayName: 'Category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::category.category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::category.category',
       'oneToOne',
       'admin::user'
     > &
@@ -785,7 +814,6 @@ export interface ApiReportReport extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: true;
-    populateCreatorFields: true;
   };
   attributes: {
     Title: Attribute.String;
@@ -811,6 +839,11 @@ export interface ApiReportReport extends Schema.CollectionType {
       ]
     >;
     Author: Attribute.Relation<'api::report.report', 'oneToOne', 'admin::user'>;
+    categories: Attribute.Relation<
+      'api::report.report',
+      'oneToMany',
+      'api::category.category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -818,12 +851,14 @@ export interface ApiReportReport extends Schema.CollectionType {
       'api::report.report',
       'oneToOne',
       'admin::user'
-    >;
+    > &
+      Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::report.report',
       'oneToOne',
       'admin::user'
-    >;
+    > &
+      Attribute.Private;
   };
 }
 
@@ -843,6 +878,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::category.category': ApiCategoryCategory;
       'api::event.event': ApiEventEvent;
       'api::page.page': ApiPagePage;
       'api::report.report': ApiReportReport;
