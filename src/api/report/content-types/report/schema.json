@@ -40,7 +40,7 @@
         "layout.three-fourth-content"
       ]
     },
-    "Author": {
+    "author": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "admin::user"
