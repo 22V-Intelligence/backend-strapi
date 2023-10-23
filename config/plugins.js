@@ -24,4 +24,59 @@ module.exports = ({ env }) => ({
       },
     },
   },
+  "fuzzy-search": {
+    enabled: true,
+    config: {
+      contentTypes: [
+        {
+          uid: "api::report.report",
+          modelName: "report",
+          transliterate: false,
+          fuzzysortOptions: {
+            characterLimit: 500,
+            threshold: -1000,
+            limit: 15,
+            keys: [
+              {
+                name: "Title",
+                weight: 100,
+              },
+            ],
+          },
+        },
+        {
+          uid: "api::event.event",
+          modelName: "event",
+          transliterate: false,
+          fuzzysortOptions: {
+            characterLimit: 500,
+            threshold: -1000,
+            limit: 15,
+            keys: [
+              {
+                name: "Title",
+                weight: 100,
+              },
+            ],
+          },
+        },
+        {
+          uid: "api::page.page",
+          modelName: "page",
+          transliterate: false,
+          fuzzysortOptions: {
+            characterLimit: 500,
+            threshold: -1000,
+            limit: 15,
+            keys: [
+              {
+                name: "Title",
+                weight: 100,
+              },
+            ],
+          },
+        },
+      ],
+    },
+  },
 });
