@@ -65,6 +65,7 @@ export interface LayoutEventList extends Schema.Component {
   collectionName: 'components_layout_event_lists';
   info: {
     displayName: 'Event List';
+    description: '';
   };
   attributes: {
     Title: Attribute.String;
@@ -74,6 +75,7 @@ export interface LayoutEventList extends Schema.Component {
       'oneToMany',
       'api::event.event'
     >;
+    Type: Attribute.Enumeration<['list', 'grid']>;
   };
 }
 
