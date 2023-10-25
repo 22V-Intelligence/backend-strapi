@@ -45,6 +45,11 @@
         "layout.three-fourth-content",
         "layout.content-block"
       ]
+    },
+    "EventDetails": {
+      "type": "component",
+      "repeatable": false,
+      "component": "metadata.event-details"
     }
   }
 }
