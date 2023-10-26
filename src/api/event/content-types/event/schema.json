@@ -50,6 +50,11 @@
       "type": "component",
       "repeatable": false,
       "component": "metadata.event-details"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category"
     }
   }
 }

@@ -429,6 +429,11 @@ export interface ApiEventEvent extends Schema.CollectionType {
       ]
     >;
     EventDetails: Attribute.Component<'metadata.event-details'>;
+    categories: Attribute.Relation<
+      'api::event.event',
+      'oneToMany',
+      'api::category.category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

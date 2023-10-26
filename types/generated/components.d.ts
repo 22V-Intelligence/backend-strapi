@@ -261,12 +261,14 @@ export interface MetadataEventDetails extends Schema.Component {
   collectionName: 'components_metadata_event_details';
   info: {
     displayName: 'Event Details';
+    description: '';
   };
   attributes: {
     date: Attribute.Date;
-    time: Attribute.Time;
     location: Attribute.String;
     details: Attribute.RichText;
+    startTime: Attribute.Time;
+    endTime: Attribute.Time;
   };
 }
 
