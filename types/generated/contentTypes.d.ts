@@ -434,6 +434,8 @@ export interface ApiEventEvent extends Schema.CollectionType {
       'oneToMany',
       'api::category.category'
     >;
+    EventStart: Attribute.DateTime;
+    EventEnd: Attribute.DateTime;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -488,6 +490,7 @@ export interface ApiPagePage extends Schema.CollectionType {
       ]
     >;
     Slug: Attribute.UID<'api::page.page', 'Title'>;
+    HideFromSearch: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
