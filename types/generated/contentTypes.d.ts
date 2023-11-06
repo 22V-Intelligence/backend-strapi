@@ -362,200 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiCategoryCategory extends Schema.CollectionType {
-  collectionName: 'categories';
-  info: {
-    singularName: 'category';
-    pluralName: 'categories';
-    displayName: 'Category';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Name: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiEventEvent extends Schema.CollectionType {
-  collectionName: 'events';
-  info: {
-    singularName: 'event';
-    pluralName: 'events';
-    displayName: 'Event';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Slug: Attribute.UID;
-    Title: Attribute.String & Attribute.Unique;
-    Blurb: Attribute.RichText;
-    Content: Attribute.RichText;
-    Sections: Attribute.DynamicZone<
-      [
-        'layout.about-us-feature',
-        'layout.hero',
-        'layout.media-full-content',
-        'layout.report-list',
-        'layout.report-section',
-        'layout.report-summary',
-        'layout.search-bar',
-        'layout.title-text-cta',
-        'layout.word-slider',
-        'seo.metadata',
-        'layout.analysts-grid',
-        'layout.circle-feature',
-        'layout.feature-list',
-        'layout.form',
-        'layout.three-fourth-content',
-        'layout.content-block'
-      ]
-    >;
-    EventDetails: Attribute.Component<'metadata.event-details'>;
-    categories: Attribute.Relation<
-      'api::event.event',
-      'oneToMany',
-      'api::category.category'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::event.event',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::event.event',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiPagePage extends Schema.CollectionType {
-  collectionName: 'pages';
-  info: {
-    singularName: 'page';
-    pluralName: 'pages';
-    displayName: 'Page';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Metadata: Attribute.Component<'seo.metadata', true>;
-    Title: Attribute.String;
-    Sections: Attribute.DynamicZone<
-      [
-        'layout.hero',
-        'layout.title-text-cta',
-        'layout.media-full-content',
-        'layout.report-list',
-        'layout.word-slider',
-        'layout.about-us-feature',
-        'layout.search-bar',
-        'layout.report-summary',
-        'layout.report-section',
-        'layout.analysts-grid',
-        'layout.circle-feature',
-        'layout.feature-list',
-        'layout.form',
-        'layout.three-fourth-content',
-        'layout.content-block',
-        'layout.event-details-block',
-        'layout.event-list'
-      ]
-    >;
-    Slug: Attribute.UID<'api::page.page', 'Title'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiReportReport extends Schema.CollectionType {
-  collectionName: 'reports';
-  info: {
-    singularName: 'report';
-    pluralName: 'reports';
-    displayName: 'Report';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String;
-    slug: Attribute.UID<'api::report.report', 'Title'>;
-    Sections: Attribute.DynamicZone<
-      [
-        'layout.about-us-feature',
-        'layout.hero',
-        'layout.media-full-content',
-        'layout.report-list',
-        'layout.report-section',
-        'layout.report-summary',
-        'layout.search-bar',
-        'layout.title-text-cta',
-        'layout.word-slider',
-        'seo.metadata',
-        'layout.analysts-grid',
-        'layout.circle-feature',
-        'layout.content-block',
-        'layout.feature-list',
-        'layout.form',
-        'layout.three-fourth-content'
-      ]
-    >;
-    author: Attribute.Relation<'api::report.report', 'oneToOne', 'admin::user'>;
-    categories: Attribute.Relation<
-      'api::report.report',
-      'oneToMany',
-      'api::category.category'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::report.report',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::report.report',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -870,6 +676,203 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiCategoryCategory extends Schema.CollectionType {
+  collectionName: 'categories';
+  info: {
+    singularName: 'category';
+    pluralName: 'categories';
+    displayName: 'Category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::category.category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::category.category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiEventEvent extends Schema.CollectionType {
+  collectionName: 'events';
+  info: {
+    singularName: 'event';
+    pluralName: 'events';
+    displayName: 'Event';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Slug: Attribute.UID;
+    Title: Attribute.String & Attribute.Unique;
+    Blurb: Attribute.RichText;
+    Content: Attribute.RichText;
+    Sections: Attribute.DynamicZone<
+      [
+        'layout.about-us-feature',
+        'layout.hero',
+        'layout.media-full-content',
+        'layout.report-list',
+        'layout.report-section',
+        'layout.report-summary',
+        'layout.search-bar',
+        'layout.title-text-cta',
+        'layout.word-slider',
+        'seo.metadata',
+        'layout.analysts-grid',
+        'layout.circle-feature',
+        'layout.feature-list',
+        'layout.form',
+        'layout.three-fourth-content',
+        'layout.content-block'
+      ]
+    >;
+    EventDetails: Attribute.Component<'metadata.event-details'>;
+    categories: Attribute.Relation<
+      'api::event.event',
+      'oneToMany',
+      'api::category.category'
+    >;
+    EventStart: Attribute.DateTime;
+    EventEnd: Attribute.DateTime;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::event.event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::event.event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPagePage extends Schema.CollectionType {
+  collectionName: 'pages';
+  info: {
+    singularName: 'page';
+    pluralName: 'pages';
+    displayName: 'Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Metadata: Attribute.Component<'seo.metadata', true>;
+    Title: Attribute.String;
+    Sections: Attribute.DynamicZone<
+      [
+        'layout.hero',
+        'layout.title-text-cta',
+        'layout.media-full-content',
+        'layout.report-list',
+        'layout.word-slider',
+        'layout.about-us-feature',
+        'layout.search-bar',
+        'layout.report-summary',
+        'layout.report-section',
+        'layout.analysts-grid',
+        'layout.circle-feature',
+        'layout.feature-list',
+        'layout.form',
+        'layout.three-fourth-content',
+        'layout.content-block',
+        'layout.event-details-block',
+        'layout.event-list'
+      ]
+    >;
+    Slug: Attribute.UID<'api::page.page', 'Title'>;
+    HideFromSearch: Attribute.Boolean & Attribute.DefaultTo<false>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiReportReport extends Schema.CollectionType {
+  collectionName: 'reports';
+  info: {
+    singularName: 'report';
+    pluralName: 'reports';
+    displayName: 'Report';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    slug: Attribute.UID<'api::report.report', 'Title'>;
+    Sections: Attribute.DynamicZone<
+      [
+        'layout.about-us-feature',
+        'layout.hero',
+        'layout.media-full-content',
+        'layout.report-list',
+        'layout.report-section',
+        'layout.report-summary',
+        'layout.search-bar',
+        'layout.title-text-cta',
+        'layout.word-slider',
+        'seo.metadata',
+        'layout.analysts-grid',
+        'layout.circle-feature',
+        'layout.content-block',
+        'layout.feature-list',
+        'layout.form',
+        'layout.three-fourth-content'
+      ]
+    >;
+    author: Attribute.Relation<'api::report.report', 'oneToOne', 'admin::user'>;
+    categories: Attribute.Relation<
+      'api::report.report',
+      'oneToMany',
+      'api::category.category'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::report.report',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::report.report',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -880,16 +883,16 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::category.category': ApiCategoryCategory;
-      'api::event.event': ApiEventEvent;
-      'api::page.page': ApiPagePage;
-      'api::report.report': ApiReportReport;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::category.category': ApiCategoryCategory;
+      'api::event.event': ApiEventEvent;
+      'api::page.page': ApiPagePage;
+      'api::report.report': ApiReportReport;
     }
   }
 }

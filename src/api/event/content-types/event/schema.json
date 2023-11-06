@@ -55,6 +55,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::category.category"
+    },
+    "EventStart": {
+      "type": "datetime"
+    },
+    "EventEnd": {
+      "type": "datetime"
     }
   }
 }

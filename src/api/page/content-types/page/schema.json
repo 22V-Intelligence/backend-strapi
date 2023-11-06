@@ -46,6 +46,10 @@
     "Slug": {
       "type": "uid",
       "targetField": "Title"
+    },
+    "HideFromSearch": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
