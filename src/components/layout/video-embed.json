@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_layout_video_embeds",
+  "info": {
+    "displayName": "Video Embed",
+    "icon": "play"
+  },
+  "options": {},
+  "attributes": {
+    "EmbedCode": {
+      "type": "text"
+    }
+  }
+}

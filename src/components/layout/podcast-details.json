@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_layout_podcast_details",
+  "info": {
+    "displayName": "Podcast Details"
+  },
+  "options": {},
+  "attributes": {
+    "ReleaseDate": {
+      "type": "date"
+    },
+    "DurationInMs": {
+      "type": "biginteger"
+    },
+    "EpisodeLink": {
+      "type": "string"
+    },
+    "FollowLink": {
+      "type": "string",
+      "default": "https://open.spotify.com/show/69X2vr95YCy4oQwGskVbLx"
+    },
+    "ShareLink": {
+      "type": "string",
+      "default": "https://podcasters.spotify.com/pod/show/22v-research"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}

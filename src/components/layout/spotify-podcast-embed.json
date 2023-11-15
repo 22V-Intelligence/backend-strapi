@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_layout_spotify_podcast_embeds",
+  "info": {
+    "displayName": "Spotify Podcast Embed",
+    "icon": "play",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "EmbedCode": {
+      "type": "text",
+      "default": "<iframe src=\"https://podcasters.spotify.com/pod/show/22v-research/embed\" height=\"102px\" width=\"400px\" frameborder=\"0\" scrolling=\"no\"></iframe>"
+    },
+    "Title": {
+      "type": "string"
+    }
+  }
+}
