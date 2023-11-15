@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_layout_media_thumbnail_heroes",
+  "info": {
+    "displayName": "Media Thumbnail Hero",
+    "icon": "",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "SmallTextTop": {
+      "type": "string"
+    },
+    "SmallTextBottom": {
+      "type": "string"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

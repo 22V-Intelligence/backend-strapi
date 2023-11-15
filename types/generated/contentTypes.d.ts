@@ -873,6 +873,53 @@ export interface ApiReportReport extends Schema.CollectionType {
   };
 }
 
+export interface ApiWebinarWebinar extends Schema.CollectionType {
+  collectionName: 'webinars';
+  info: {
+    singularName: 'webinar';
+    pluralName: 'webinars';
+    displayName: 'Webinar';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    Sections: Attribute.DynamicZone<
+      [
+        'layout.media-thumbnail-hero',
+        'layout.hero',
+        'layout.spotify-podcast-embed',
+        'layout.video-embed',
+        'layout.podcast-details',
+        'layout.video-details'
+      ]
+    >;
+    categories: Attribute.Relation<
+      'api::webinar.webinar',
+      'oneToMany',
+      'api::category.category'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::webinar.webinar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::webinar.webinar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -893,6 +940,7 @@ declare module '@strapi/types' {
       'api::event.event': ApiEventEvent;
       'api::page.page': ApiPagePage;
       'api::report.report': ApiReportReport;
+      'api::webinar.webinar': ApiWebinarWebinar;
     }
   }
 }
