@@ -29,10 +29,17 @@
         "layout.video-details"
       ]
     },
-    "categories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::category.category"
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "Podcast",
+        "Video"
+      ],
+      "required": true
     }
   }
 }

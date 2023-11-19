@@ -293,6 +293,16 @@ export interface LayoutVideoEmbed extends Schema.Component {
   };
 }
 
+export interface LayoutWebinarList extends Schema.Component {
+  collectionName: 'components_layout_webinar_lists';
+  info: {
+    displayName: 'Webinar List';
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.DefaultTo<'Webinars'>;
+  };
+}
+
 export interface LayoutWordSlider extends Schema.Component {
   collectionName: 'components_layout_word_sliders';
   info: {
@@ -390,6 +400,7 @@ declare module '@strapi/types' {
       'layout.title-text-cta': LayoutTitleTextCta;
       'layout.video-details': LayoutVideoDetails;
       'layout.video-embed': LayoutVideoEmbed;
+      'layout.webinar-list': LayoutWebinarList;
       'layout.word-slider': LayoutWordSlider;
       'metadata.analysts': MetadataAnalysts;
       'metadata.basic-slider': MetadataBasicSlider;

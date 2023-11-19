@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_layout_webinar_lists",
+  "info": {
+    "displayName": "Webinar List"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Webinars"
+    }
+  }
+}
