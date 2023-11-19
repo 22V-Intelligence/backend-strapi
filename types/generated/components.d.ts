@@ -135,20 +135,6 @@ export interface LayoutMediaFullContent extends Schema.Component {
   };
 }
 
-export interface LayoutMediaThumbnailHero extends Schema.Component {
-  collectionName: 'components_layout_media_thumbnail_heroes';
-  info: {
-    displayName: 'Media Thumbnail Hero';
-    icon: '';
-    description: '';
-  };
-  attributes: {
-    SmallTextTop: Attribute.String;
-    SmallTextBottom: Attribute.String;
-    Image: Attribute.Media;
-  };
-}
-
 export interface LayoutPodcastDetails extends Schema.Component {
   collectionName: 'components_layout_podcast_details';
   info: {
@@ -389,7 +375,6 @@ declare module '@strapi/types' {
       'layout.form': LayoutForm;
       'layout.hero': LayoutHero;
       'layout.media-full-content': LayoutMediaFullContent;
-      'layout.media-thumbnail-hero': LayoutMediaThumbnailHero;
       'layout.podcast-details': LayoutPodcastDetails;
       'layout.report-list': LayoutReportList;
       'layout.report-section': LayoutReportSection;
