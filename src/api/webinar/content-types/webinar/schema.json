@@ -21,8 +21,6 @@
     "Sections": {
       "type": "dynamiczone",
       "components": [
-        "layout.media-thumbnail-hero",
-        "layout.hero",
         "layout.spotify-podcast-embed",
         "layout.video-embed",
         "layout.podcast-details",
@@ -40,6 +38,16 @@
         "Video"
       ],
       "required": true
+    },
+    "Thumbnail": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

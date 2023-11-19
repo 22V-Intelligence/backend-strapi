@@ -890,8 +890,6 @@ export interface ApiWebinarWebinar extends Schema.CollectionType {
     Description: Attribute.Text;
     Sections: Attribute.DynamicZone<
       [
-        'layout.media-thumbnail-hero',
-        'layout.hero',
         'layout.spotify-podcast-embed',
         'layout.video-embed',
         'layout.podcast-details',
@@ -900,6 +898,7 @@ export interface ApiWebinarWebinar extends Schema.CollectionType {
     >;
     Slug: Attribute.UID<'api::webinar.webinar', 'Title'>;
     Type: Attribute.Enumeration<['Podcast', 'Video']> & Attribute.Required;
+    Thumbnail: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
