@@ -800,7 +800,8 @@ export interface ApiPagePage extends Schema.CollectionType {
         'layout.three-fourth-content',
         'layout.content-block',
         'layout.event-details-block',
-        'layout.event-list'
+        'layout.event-list',
+        'layout.webinar-list'
       ]
     >;
     Slug: Attribute.UID<'api::page.page', 'Title'>;
@@ -889,19 +890,14 @@ export interface ApiWebinarWebinar extends Schema.CollectionType {
     Description: Attribute.Text;
     Sections: Attribute.DynamicZone<
       [
-        'layout.media-thumbnail-hero',
-        'layout.hero',
-        'layout.spotify-podcast-embed',
-        'layout.video-embed',
         'layout.podcast-details',
-        'layout.video-details'
+        'layout.video-details',
+        'layout.embedded-media'
       ]
     >;
-    categories: Attribute.Relation<
-      'api::webinar.webinar',
-      'oneToMany',
-      'api::category.category'
-    >;
+    Slug: Attribute.UID<'api::webinar.webinar', 'Title'>;
+    Type: Attribute.Enumeration<['Podcast', 'Video']> & Attribute.Required;
+    Thumbnail: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

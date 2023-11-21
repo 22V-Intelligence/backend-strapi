@@ -21,18 +21,33 @@
     "Sections": {
       "type": "dynamiczone",
       "components": [
-        "layout.media-thumbnail-hero",
-        "layout.hero",
-        "layout.spotify-podcast-embed",
-        "layout.video-embed",
         "layout.podcast-details",
-        "layout.video-details"
+        "layout.video-details",
+        "layout.embedded-media"
       ]
     },
-    "categories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::category.category"
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "Podcast",
+        "Video"
+      ],
+      "required": true
+    },
+    "Thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
