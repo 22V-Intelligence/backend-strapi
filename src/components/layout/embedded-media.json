@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_layout_embedded_medias",
+  "info": {
+    "displayName": "Embedded Media",
+    "icon": "play"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "EmbedCode": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

@@ -49,6 +49,18 @@ export interface LayoutContentBlock extends Schema.Component {
   };
 }
 
+export interface LayoutEmbeddedMedia extends Schema.Component {
+  collectionName: 'components_layout_embedded_medias';
+  info: {
+    displayName: 'Embedded Media';
+    icon: 'play';
+  };
+  attributes: {
+    Title: Attribute.String;
+    EmbedCode: Attribute.Text & Attribute.Required;
+  };
+}
+
 export interface LayoutEventDetailsBlock extends Schema.Component {
   collectionName: 'components_layout_event_details_blocks';
   info: {
@@ -216,20 +228,6 @@ export interface LayoutSearchBar extends Schema.Component {
   };
 }
 
-export interface LayoutSpotifyPodcastEmbed extends Schema.Component {
-  collectionName: 'components_layout_spotify_podcast_embeds';
-  info: {
-    displayName: 'Spotify Podcast Embed';
-    icon: 'play';
-    description: '';
-  };
-  attributes: {
-    EmbedCode: Attribute.Text &
-      Attribute.DefaultTo<'<iframe src="https://podcasters.spotify.com/pod/show/22v-research/embed" height="102px" width="400px" frameborder="0" scrolling="no"></iframe>'>;
-    Title: Attribute.String;
-  };
-}
-
 export interface LayoutThreeFourthContent extends Schema.Component {
   collectionName: 'components_layout_three_fourth_contents';
   info: {
@@ -265,17 +263,6 @@ export interface LayoutVideoDetails extends Schema.Component {
     ShareLink: Attribute.String;
     Title: Attribute.String;
     Description: Attribute.Text;
-  };
-}
-
-export interface LayoutVideoEmbed extends Schema.Component {
-  collectionName: 'components_layout_video_embeds';
-  info: {
-    displayName: 'Video Embed';
-    icon: 'play';
-  };
-  attributes: {
-    EmbedCode: Attribute.Text;
   };
 }
 
@@ -369,6 +356,7 @@ declare module '@strapi/types' {
       'layout.analysts-grid': LayoutAnalystsGrid;
       'layout.circle-feature': LayoutCircleFeature;
       'layout.content-block': LayoutContentBlock;
+      'layout.embedded-media': LayoutEmbeddedMedia;
       'layout.event-details-block': LayoutEventDetailsBlock;
       'layout.event-list': LayoutEventList;
       'layout.feature-list': LayoutFeatureList;
@@ -380,11 +368,9 @@ declare module '@strapi/types' {
       'layout.report-section': LayoutReportSection;
       'layout.report-summary': LayoutReportSummary;
       'layout.search-bar': LayoutSearchBar;
-      'layout.spotify-podcast-embed': LayoutSpotifyPodcastEmbed;
       'layout.three-fourth-content': LayoutThreeFourthContent;
       'layout.title-text-cta': LayoutTitleTextCta;
       'layout.video-details': LayoutVideoDetails;
-      'layout.video-embed': LayoutVideoEmbed;
       'layout.webinar-list': LayoutWebinarList;
       'layout.word-slider': LayoutWordSlider;
       'metadata.analysts': MetadataAnalysts;
