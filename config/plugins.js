@@ -24,6 +24,19 @@ module.exports = ({ env }) => ({
       },
     },
   },
+  "users-permissions": {
+    config: {
+      register: {
+        allowedFields: [
+          "firstName",
+          "lastName",
+          "company",
+          "phoneNumber",
+          "contactPreference",
+        ],
+      },
+    },
+  },
   "fuzzy-search": {
     enabled: true,
     config: {
