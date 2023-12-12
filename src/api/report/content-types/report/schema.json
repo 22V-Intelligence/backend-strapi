@@ -37,7 +37,8 @@
         "layout.content-block",
         "layout.feature-list",
         "layout.form",
-        "layout.three-fourth-content"
+        "layout.three-fourth-content",
+        "layout.raw-html"
       ]
     },
     "author": {

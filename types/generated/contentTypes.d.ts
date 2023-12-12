@@ -744,7 +744,8 @@ export interface ApiEventEvent extends Schema.CollectionType {
         'layout.feature-list',
         'layout.form',
         'layout.three-fourth-content',
-        'layout.content-block'
+        'layout.content-block',
+        'layout.raw-html'
       ]
     >;
     EventDetails: Attribute.Component<'metadata.event-details'>;
@@ -806,7 +807,8 @@ export interface ApiPagePage extends Schema.CollectionType {
         'layout.content-block',
         'layout.event-details-block',
         'layout.event-list',
-        'layout.webinar-list'
+        'layout.webinar-list',
+        'layout.raw-html'
       ]
     >;
     Slug: Attribute.UID<'api::page.page', 'Title'>;
@@ -852,7 +854,8 @@ export interface ApiReportReport extends Schema.CollectionType {
         'layout.content-block',
         'layout.feature-list',
         'layout.form',
-        'layout.three-fourth-content'
+        'layout.three-fourth-content',
+        'layout.raw-html'
       ]
     >;
     author: Attribute.Relation<'api::report.report', 'oneToOne', 'admin::user'>;

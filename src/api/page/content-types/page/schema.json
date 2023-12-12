@@ -41,7 +41,8 @@
         "layout.content-block",
         "layout.event-details-block",
         "layout.event-list",
-        "layout.webinar-list"
+        "layout.webinar-list",
+        "layout.raw-html"
       ]
     },
     "Slug": {
