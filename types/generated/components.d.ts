@@ -165,6 +165,16 @@ export interface LayoutPodcastDetails extends Schema.Component {
   };
 }
 
+export interface LayoutRawHtml extends Schema.Component {
+  collectionName: 'components_layout_raw_htmls';
+  info: {
+    displayName: 'RawHtml';
+  };
+  attributes: {
+    HTMLContent: Attribute.Text;
+  };
+}
+
 export interface LayoutReportList extends Schema.Component {
   collectionName: 'components_layout_report_lists';
   info: {
@@ -364,6 +374,7 @@ declare module '@strapi/types' {
       'layout.hero': LayoutHero;
       'layout.media-full-content': LayoutMediaFullContent;
       'layout.podcast-details': LayoutPodcastDetails;
+      'layout.raw-html': LayoutRawHtml;
       'layout.report-list': LayoutReportList;
       'layout.report-section': LayoutReportSection;
       'layout.report-summary': LayoutReportSummary;

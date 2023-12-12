@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_layout_raw_htmls",
+  "info": {
+    "displayName": "RawHtml"
+  },
+  "options": {},
+  "attributes": {
+    "HTMLContent": {
+      "type": "text"
+    }
+  }
+}
